@@ -1,0 +1,20 @@
+{
+  "source": "https://wordpress.org/news",
+  "pages_read": 1,
+  "truncated": true,
+  "total_posts_read": 2,
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome",
+      "date_gmt": "2003-04-06T08:06:05",
+      "link": "https://wordpress.org/news/2003/04/welcome/"
+    },
+    {
+      "id": 2,
+      "title": "Comments and Template",
+      "date_gmt": "2003-04-07T07:20:28",
+      "link": "https://wordpress.org/news/2003/04/comments-and-template/"
+    }
+  ]
+}
