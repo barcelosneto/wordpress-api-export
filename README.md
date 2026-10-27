@@ -3,8 +3,8 @@
 Cliente Python original, somente leitura, para catalogar publicações públicas de um WordPress com REST API habilitada. Usa a biblioteca padrão, paginação limitada, timeout e validação do contrato. Não instala plugins, autentica usuários, cria rascunhos ou publica conteúdo.
 
 ```console
-python examples/wordpress_export/export_posts.py https://SEU-SITE.example catalogo.json --max-pages 5 --per-page 20
-python -m unittest discover -s examples/wordpress_export -p "test_*.py" -v
+python export_posts.py https://SEU-SITE.example catalogo.json --max-pages 5 --per-page 20
+python -m unittest discover -s . -p "test_*.py" -v
 ```
 
 Substitua o endereço pelo site público desejado. Algumas instalações não usam a rota `/wp-json/`, restringem a API ou possuem filtros próprios; este cliente cobre o contrato padrão e informa falhas, sem contornar restrições. Respeite a capacidade do site. O catálogo é JSON, não CSV para execução em planilhas. Títulos são convertidos de HTML para texto. Sem credenciais ou dados privados.
@@ -16,3 +16,8 @@ Validação local: testes com respostas fictícias e servidor HTTP local verific
 Em 27/10/2026, o comando também foi executado contra `https://wordpress.org/news`, limitado a uma página e duas publicações. A consulta pública GET retornou dois registros e marcou `truncated=true`, como esperado. A saída está em `verificacao-publica.json`. Essa consulta comprova o caminho de leitura naquele endpoint e instante; não garante compatibilidade com todos os sites WordPress. Sete testes automatizados locais passaram.
 
 Referências: [WordPress REST API — Posts](https://developer.wordpress.org/rest-api/reference/posts/) e [Pagination](https://developer.wordpress.org/rest-api/using-the-rest-api/pagination/). Implementação original, sem copiar código do blog. Licença MIT em `LICENSE` nesta pasta.
+
+
+## Projeto independente
+
+Este código foi separado do ExcelFlow para manter um escopo próprio. O histórico da pasta foi preservado na extração com Git. O projeto usa somente a biblioteca padrão do Python; os comandos acima devem ser executados na raiz deste repositório.
